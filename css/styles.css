@@ -8,10 +8,23 @@
   --body-background-color: #fafafa;
   --primary-accent-color: #fd9222;
   --secondary-accent-color: #fcf1e0;
+  --section-bg-color: #1e1823;
+  --dark-bg-color: #1e1823;
 }
 /* ================ /VARIABLES ================ */
 
 /* ================ COMMON STYLES ================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -19,6 +32,9 @@ a {
 
 ul,
 ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
@@ -26,10 +42,26 @@ button {
   cursor: pointer;
 }
 
+img {
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
 body {
   font-family: var(--primary-font);
   color: var(--primary-text-color);
   background-color: var(--body-background-color);
+}
+
+.container {
+  max-width: 1168px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .accent-color {
@@ -44,21 +76,56 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.section-paddings {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 /* ================ /COMMON STYLES ================ */
 
 /* ================ HEADER STYLES ================ */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .site-logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
+.page-menu {
+  display: flex;
+  column-gap: 24px;
+}
+
 .page-menu-link {
+  display: block;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .page-menu-link:hover,
@@ -68,19 +135,47 @@ body {
 /* ================ /HEADER STYLES ================ */
 
 /* ================ HERO STYLES ================ */
+.hero-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  background-color: var(--section-bg-color);
+  color: var(--secondary-text-color);
+  margin-bottom: 72px;
+}
+
+.hero-section-container {
+  padding-top: 381px;
+  padding-bottom: 40px;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
 .main-title {
+  width: 484px;
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.hero-section-bottom-content {
+  display: flex;
+  align-items: center;
 }
 
 .buy-now-btn {
+  min-width: 144px;
+  padding: 14px 20px;
   font-size: 14px;
   font-weight: 600;
   background-color: var(--primary-accent-color);
   color: var(--secondary-text-color);
   border: none;
+  border-radius: 100px;
+  margin-right: 14px;
 }
 
 .buy-now-btn:hover,
@@ -90,13 +185,20 @@ body {
 }
 
 .how-made-link {
+  display: inline-block;
+  min-width: 183px;
+  padding: 14px 20px;
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
 }
 
 .how-made-link:hover,
 .how-made-link:focus {
   color: var(--primary-accent-color);
+  border-color: var(--primary-accent-color);
 }
 
 .scroll-down-link {
@@ -104,6 +206,7 @@ body {
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.03em;
+  margin-left: auto;
 }
 
 .scroll-down-link:hover,
@@ -113,25 +216,86 @@ body {
 /* ================ /HERO STYLES ================ */
 
 /* ================ BENEFITS STYLES ================ */
+.benefits-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: var(--secondary-text-color);
+  background-color: var(--section-bg-color);
+  margin-bottom: 50px;
+}
+
+.benefits-list {
+  display: flex;
+  column-gap: 88px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.benefits-list-item {
+  width: calc((100% - 2 * 88px) / 3);
+}
+
 .benefits-list-title {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 18px;
 }
 
 .benefits-list-text {
   font-size: 14px;
   line-height: 1.3;
   letter-spacing: -0.02em;
+  color: var(--secondary-text-color-alpha-70);
 }
 /* ================ /BENEFITS STYLES ================ */
 
 /* ================ INGREDIENTS STYLES ================ */
+.ingredients-title {
+  width: 411px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
+}
+
 .ingredients-description {
+  width: 486px;
   font-size: 14px;
   line-height: 1.3;
   letter-spacing: -0.02em;
   text-align: center;
   color: var(--primary-text-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 54px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.ingredients-list-item {
+  width: calc((100% - 3 * 24px) / 4);
+  padding: 28px 32px;
+  border: 1px solid var(--primary-accent-color);
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.ingredients-list-item:nth-child(4n + 1) {
+  background-color: var(--primary-accent-color);
+  color: var(--secondary-text-color);
+}
+
+.ingredients-list-item:nth-child(4n + 3) {
+  background-color: var(--dark-bg-color);
+  border-color: var(--dark-bg-color);
+  color: var(--secondary-text-color);
+}
+
+.ingredients-list-img {
+  margin-bottom: 36px;
 }
 
 .ingredients-list-title {
@@ -144,11 +308,33 @@ body {
 /* ================ /INGREDIENTS STYLES ================ */
 
 /* ================ HOW MADE STYLES ================ */
+.how-made-section-title {
+  margin-bottom: 50px;
+}
+
+.how-made-content-wrapper {
+  display: flex;
+  column-gap: 20px;
+}
+
+.how-made-text-content {
+  flex-grow: 1;
+  padding: 32px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.how-made-list {
+  padding-right: 26px;
+}
+
 .how-made-title {
+  width: 350px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
   color: var(--primary-text-color);
+  margin-bottom: 32px;
 }
 
 .how-made-list-item {
@@ -157,15 +343,44 @@ body {
   letter-spacing: -0.02em;
   color: var(--primary-text-color);
 }
+
+.how-made-list-item:not(:last-child) {
+  margin-bottom: 24px;
+}
 /* ================ /HOW MADE STYLES ================ */
 
 /* ================ REVIEWS STYLES ================ */
+.reviews-section {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.reviews-title {
+  margin-bottom: 50px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 50px;
+}
+
+.reviews-list-item {
+  width: calc((100% - 2 * 28px) / 3);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+  background-color: #ffffff;
+  padding: 56px 24px 24px 24px;
+}
+
 .reviews-list-fullname {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
   text-align: center;
   color: var(--primary-text-color);
+  margin-bottom: 24px;
 }
 
 .reviews-list-text {
@@ -177,9 +392,17 @@ body {
 }
 
 .leave-review-btn {
+  display: block;
+  min-width: 222px;
   font-size: 18px;
   font-weight: 600;
   color: var(--primary-text-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-accent-color);
+  border-radius: 100px;
+  padding: 14px 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .leave-review-btn:hover,
@@ -190,7 +413,21 @@ body {
 /* ================ /REVIEWS STYLES ================ */
 
 /* ================ FOOTER STYLES ================ */
+.page-footer {
+  background-color: var(--section-bg-color);
+  color: var(--secondary-text-color);
+}
+
+.page-footer-top-block {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .page-footer-title {
+  width: 300px;
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
@@ -201,6 +438,11 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.contact-list-item:not(:last-child) {
+  margin-bottom: 4px;
 }
 
 .contact-list-link {
@@ -212,5 +454,14 @@ body {
 .contact-list-link:hover,
 .contact-list-link:focus {
   color: var(--primary-accent-color);
+}
+
+.page-footer-bottom-block {
+  padding-top: 24px;
+  padding-bottom: 86px;
+}
+
+.page-footer-bottom-block .menu-link {
+  color: var(--secondary-text-color);
 }
 /* ================ /FOOTER STYLES ================ */
