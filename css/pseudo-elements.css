@@ -31,11 +31,24 @@ ol {
 }
 
 .title {
+  width: max-content;
   margin-left: auto;
   margin-right: auto;
   font-family: sans-serif;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.title::after {
+  display: block;
+  width: 80%;
+  height: 4px;
+  background-color: teal;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  content: '';
 }
 
 .task-list-item {
@@ -44,4 +57,15 @@ ol {
 
 .task-list-item:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.task-list-item::before {
+  display: inline-block;
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: teal;
+  border: 2px solid tomato;
+  margin-right: 10px;
 }
