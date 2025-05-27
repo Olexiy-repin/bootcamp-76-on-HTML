@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <form class="order-form">
+      <label class="order-form-field-label" for="user-first-name">
+        Your first name <sup class="required-color">*</sup>
+      </label>
+      <input class="order-form-input" id="user-first-name" name="username" type="text" placeholder="Oleksii" required />
+
+      <label class="order-form-field-label" for="user-email"> Your email <sup class="required-color">*</span> </label>
+      <input
+        class="order-form-input"
+        id="user-email"
+        name="user-email"
+        type="email"
+        placeholder="test@gmail.com"
+        required
+      />
+
+      <label class="order-form-field-label" for="user-tel">
+        Your phone number <sup class="required-color">*</sup>
+      </label>
+      <input
+        class="order-form-input"
+        id="user-tel"
+        name="user-tel"
+        type="tel"
+        placeholder="xxx-xxx-xx-xx"
+        required
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+        title="xxx-xxx-xx-xx"
+      />
+
+      <fieldset class="pizza-size-wrapper">
+        <legend>Pizza size</legend>
+        <ul class="pizza-size-list">
+          <li class="pizza-size-item">
+            <label for="pizza-size-s">s</label>
+            <input class="pizza-size-radio" id="pizza-size-s" name="pizza-size" value="s" type="radio" >
+          </li>
+          <li class="pizza-size-item">
+            <label for="pizza-size-m">m</label>
+            <input class="pizza-size-radio" id="pizza-size-m" name="pizza-size" value="m" type="radio" >
+          </li>
+          <li class="pizza-size-item">
+            <label for="pizz-size-l">l</label>
+            <input class="pizza-size-radio" id="pizz-size-l" name="pizza-size" value="l" type="radio" >
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="pizza-size-wrapper">
+        <legend>Additional ingredients</legend>
+        <ul class="pizza-size-list">
+          <li class="pizza-size-item">
+            <label>
+              <input class="pizza-ingredient" name="pizza-ingredient" value="cheese" type="checkbox">
+              Cheese
+            </label>
+          </li>
+          <li class="pizza-size-item">
+            <label>
+              <input class="pizza-ingredient" name="pizza-ingredient" value="peperoni" type="checkbox">
+              Peperoni
+            </label>
+          </li>
+          <li class="pizza-size-item">
+            <label>
+              <input class="pizza-ingredient" name="pizza-ingredient" value="mushrooms" type="checkbox">
+              Mushrooms
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <label class="order-form-message-label">
+        You comment
+        <textarea class="order-form-message" name="user-message" placeholder="Your message"></textarea>
+      </label>
+      
+      <div class="order-form-city-wrapper">
+        <label class="order-form-city-desc" for="city">Select your city</label>
+        <select name="user-city" id="city">
+          <option disabled selected>select city</option>
+          <optgroup label="Kyiv region">
+            <option value="kyiv">Kyiv</option>
+            <option value="irpin">Irpin</option>
+            <option value="bucha">Bucha</option>
+          </optgroup>
+          <optgroup label="Poltava region">
+            <option value="poltava">Poltava</option>
+            <option value="kremenchuk">Kremenchuk</option>
+            <option value="globino">Globino</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="order-form-policy-wrapper">
+        <input class="order-form-policy-checkbox visually-hidden" id="policy-checkbox" type="checkbox" >
+        <label class="order-form-policy-label" for="policy-checkbox"><span class="order-form-custom-checkbox"></span> I accept the terms</label>
+      </div>
+
+      <div class="order-form-btn-wrapper">
+        <button class="order-form-btn order-form-btn-submit" type="submit">Send</button>
+        <button class="order-form-btn order-form-btn-reset" type="reset">Clear</button>
+      </div>
+    </form>
+  </body>
+</html>
