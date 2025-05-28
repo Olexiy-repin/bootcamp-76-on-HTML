@@ -40,6 +40,9 @@ ol {
 }
 
 button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -635,3 +638,182 @@ body {
   color: var(--secondary-text-color);
 }
 /* ================ /FOOTER STYLES ================ */
+
+/* ================ MODAL WINDOW STYLES ================ */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  background-color: #11111180;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--primary-transition);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 517px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  stroke: #111111;
+  line-height: 0;
+  transition: stroke var(--primary-transition);
+}
+
+.close-modal-btn:hover,
+.close-modal-btn:focus {
+  stroke: var(--primary-accent-color);
+}
+
+.review-slogan {
+  width: 300px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  margin-bottom: 40px;
+}
+
+.review-form-field-wrapper {
+  margin-bottom: 18px;
+}
+
+.review-form-field-label {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #4040404d;
+  margin-bottom: 8px;
+}
+
+.review-form-input {
+  width: 100%;
+  height: 68px;
+  border: 1px solid #1111110d;
+  border-radius: 13px;
+  background-color: transparent;
+  padding-left: 62px;
+  transition: border-color var(--primary-transition);
+  outline: transparent;
+}
+
+.review-form-input:focus {
+  border-color: var(--primary-accent-color);
+}
+
+.review-form-field-content-wrapper {
+  position: relative;
+}
+
+.review-form-field-icon {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: #404040;
+  transition: stroke var(--primary-transition);
+}
+
+.review-form-input:focus + .review-form-field-icon {
+  stroke: var(--primary-accent-color);
+}
+
+.review-form-message {
+  width: 100%;
+  height: 137px;
+  border: 1px solid #1111110d;
+  border-radius: 13px;
+  background-color: transparent;
+  resize: none;
+  padding: 22px 24px;
+  outline: transparent;
+  transition: border-color var(--primary-transition);
+}
+
+.review-form-message:focus {
+  border-color: var(--primary-accent-color);
+}
+
+.review-form-message::placeholder {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #4040404d;
+}
+
+.review-form-checkbox-wrapper {
+  margin-bottom: 40px;
+}
+
+.review-form-checkbox-label {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #40404099;
+}
+
+.review-form-custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: 6px;
+  cursor: pointer;
+  fill: transparent;
+  margin-right: 12px;
+}
+
+.review-form-policy-checkbox:checked + .review-form-checkbox-label .review-form-custom-checkbox {
+  background-color: var(--primary-accent-color);
+  border-color: var(--primary-accent-color);
+  fill: #ffffff;
+}
+
+.review-form-policy-checkbox:focus + .review-form-checkbox-label .review-form-custom-checkbox {
+  outline: 2px solid #0000ff80;
+}
+
+.privacy-policy-link {
+  color: var(--primary-accent-color);
+  text-decoration: underline;
+}
+
+.review-form-submit-btn {
+  min-width: 117px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 100px;
+  padding: 14px 16px;
+  background-color: var(--primary-accent-color);
+  color: var(--secondary-text-color);
+  transition: background-color var(--primary-transition), color var(--primary-transition);
+}
+
+.review-form-submit-btn:hover,
+.review-form-submit-btn:focus {
+  background-color: var(--secondary-accent-color);
+  color: var(--primary-accent-color);
+}
+/* ================ /MODAL WINDOW STYLES ================ */
